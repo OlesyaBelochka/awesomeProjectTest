@@ -16,12 +16,13 @@ func main() {
 
 	//13.03.2018 14:00:15,12.03.2018 14:00:15
 	//12.03.2018 14:00:15,13.03.2018 14:00:15
+	fmt.Println("Введите дату в формате дд.ьь.гггг чч:мм:сс")
 	inputedTime, err := bufio.NewReader(os.Stdin).ReadString('\n')
 	if err != nil && err != io.EOF {
 		panic(err)
 	}
 
-	splitedTime := strings.Split(inputedTime, ",")
+	plitedTime := strings.Split(inputedTime, ",")
 
 	time1, err := time.Parse("02.01.2006 15:04:05", strings.TrimRight(splitedTime[0], "\n"))
 	time2, err := time.Parse("02.01.2006 15:04:05", strings.TrimRight(splitedTime[1], "\n"))
