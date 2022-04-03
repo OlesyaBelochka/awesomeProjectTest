@@ -19,7 +19,7 @@ func main() {
 	fmt.Println("Введите дату в формате дд.мм.гггг чч:мм:сс, дд.мм.гггг чч:мм:сс")
 	fmt.Println("сделала Олеся")
 	fmt.Println("это главная программа")
-
+	fmt.Println("где же название")
 	inputedTime, err := bufio.NewReader(os.Stdin).ReadString('\n')
 	if err != nil && err != io.EOF {
 		panic(err)
