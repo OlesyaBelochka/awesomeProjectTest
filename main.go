@@ -22,7 +22,7 @@ func main() {
 		panic(err)
 	}
 
-	plitedTime := strings.Split(inputedTime, ",")
+	splitedTime := strings.Split(inputedTime, ",")
 
 	time1, err := time.Parse("02.01.2006 15:04:05", strings.TrimRight(splitedTime[0], "\n"))
 	time2, err := time.Parse("02.01.2006 15:04:05", strings.TrimRight(splitedTime[1], "\n"))
