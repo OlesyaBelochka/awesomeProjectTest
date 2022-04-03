@@ -18,7 +18,10 @@ func main() {
 	//12.03.2018 14:00:15,13.03.2018 14:00:15
 	fmt.Println("Введите дату в формате дд.мм.гггг чч:мм:сс, дд.мм.гггг чч:мм:сс")
 	fmt.Println("сделала Олеся")
-
+	fmt.Println("сделала Олеся")
+	fmt.Println("сделала Олеся")
+	fmt.Println("сделала Олеся")
+	fmt.Println("сделала Олеся")
 	inputedTime, err := bufio.NewReader(os.Stdin).ReadString('\n')
 	if err != nil && err != io.EOF {
 		panic(err)
