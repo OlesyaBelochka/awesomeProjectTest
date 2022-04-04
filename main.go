@@ -4,51 +4,37 @@ import (
 	"fmt"
 )
 
-func getArr(a int) ([]int, int) {
-	var arr []int
-	var countA int
-	if a > 10 {
-		countA = 1
+func getDigit(a, sum int64) int64 {
+	if a < 10 {
+		sum += a
+		return sum
+	} else {
+		sum += a % 10
+		//		fmt.Println(a%10, " ", sum)
+		return getDigit(a/10, sum)
 	}
-	if a >= 10 && a < 100 {
-		countA = 2
-	}
-	if a >= 100 && a < 1000 {
-		countA = 3
-	}
-	if a >= 1000 && a < 10000 {
-		countA = 4
-	}
-	if a == 10000 {
-		countA = 5
-	}
+}
 
-	for i := 0; i < countA; i++ {
+func getArr(a int64) int64 {
 
-		arr = append(arr, a%10)
-		a = a / 10
+	var sum int64
+
+	sum = getDigit(a, sum)
+
+	//fmt.Println(sum)
+
+	if sum < 10 {
+		return sum
 	}
-
-	return arr, countA
+	return getArr(sum)
 }
 func main() {
-	var a, b int
-	var arr, brr []int
-	var countA, countB int
+	var a, sum int64
 
-	fmt.Scan(&a, &b)
+	fmt.Scan(&a)
 
-	arr, countA = getArr(a)
-	brr, countB = getArr(b)
+	sum = getArr(a)
 
-	for i := 0; i < countA; i++ {
-
-		for j := 0; j < countB; j++ {
-			if arr[i] == brr[j] {
-				defer fmt.Print(arr[i], " ")
-			}
-		}
-
-	}
+	fmt.Println(sum)
 
 }
