@@ -11,7 +11,7 @@ func Task10() {
 
 	if a <= b {
 		for i = b; i > a; i-- {
-			if i%7 == 0 && i != 0 {
+			if i%7 == 0 {
 				max = i
 				break
 			}
